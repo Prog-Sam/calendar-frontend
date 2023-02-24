@@ -17,6 +17,7 @@ import ChangePasswordForm from './components/changePasswordForm';
 import Settings from './components/settings';
 import Navigation from './components/navigation';
 import LoginForm from './components/loginForm';
+import Register from './components/register';
 import UserContext from './context/userContext';
 import { getCurrentUser, logout } from './services/authService';
 import ProtectedRoute from './common/protectedRoute';
@@ -55,17 +56,11 @@ function App() {
             <ProtectedRoute path='/contactTypes/:id' component={ContactTypeForm} />
             <ProtectedRoute path='/products/:id' component={PlasticTypeForm} />
             <ProtectedRoute path='/products-image/:id' component={PlasticTypeImageForm} /> */}
+            <Route path='/Register/:id' render={(props) => <Register {...props} />} />
             {/*Routes for Non Form */}
-            {/* <Route path='/login' render={(props) => <LoginForm {...props} />} />
+            <Route path='/login' render={(props) => <LoginForm {...props} />} />
             <Route path='/updatePassword' render={(props) => <ChangePasswordForm {...props} />} />
-            <Route path='/users' render={(props) => <User {...props} />} />
-            <Route path='/userAccounts' render={(props) => <UserAccount {...props} />} />
-            <Route path='/products' render={(props) => <PlasticType {...props} />} />
-            <Route path='/contacts' render={(props) => <Contact {...props} />} />
-            <Route path='/contactTypes' render={(props) => <ContactType {...props} />} />
-            <Route path='/contactUs' render={(props) => <ContactUs {...props} />} />
-            <Route path='/aboutUs' render={(props) => <AboutUs {...props} />} /> */}
-
+            {/* <Route path='/users' render={(props) => <User {...props} />} /> */}
 
             <Route
               path='/settings'

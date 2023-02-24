@@ -33,7 +33,7 @@ const Navigation = ({ currentUser, onLogout }) => {
                 <Link to='/login' className='nav-link'>
                 LOGIN
               </Link>
-              <Link to='/register' className='nav-link'>
+              <Link to='/register/New' className='nav-link'>
               REGISTER
             </Link>
               </Fragment>
