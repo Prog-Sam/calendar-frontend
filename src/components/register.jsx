@@ -20,7 +20,7 @@ const Register = (props) => {
     const userId = props.match.params.id;
     if (userId === 'New') return;
 
-    props.history.push('/home');
+    props.history.push('/');
 
     return console.log('disconnect Server');
   }, []);
