@@ -2,9 +2,10 @@ import React from 'react';
 import { getPlasticTypes } from '../services/plasticTypeService';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import MyCalendar from '../common/calendar';
 
 const PlasticTypeView = () => {
-    // const [eventItems, setEventItems] = useState([]);
+    const [eventItems, setEventItems] = useState([]);
 
     // useEffect(() => {
     //     async function populateEventItems(){
@@ -18,7 +19,7 @@ const PlasticTypeView = () => {
 
   return (
     <div>
-      <h1>Home</h1>
+      <MyCalendar name='cal' events={eventItems} />
     </div>
   );
 };

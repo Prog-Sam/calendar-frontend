@@ -1,17 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
-// import User from './components/user';
-// import UserAccount from './components/userAccount';
-// import ContactType from './components/contactType';
-// import Contact from './components/contact';
-// import PlasticType from './components/plasticType';
-// import ContactUs from './components/contactUs';
-// import AboutUs from './components/aboutus';
+
 import Home from './components/home';
 
 import UserForm from './components/userForm';
-import UserAccountForm from './components/userAccountForm';
 import NotFound from './components/notFound';
 import ChangePasswordForm from './components/changePasswordForm';
 import Settings from './components/settings';
@@ -22,11 +15,9 @@ import UserContext from './context/userContext';
 import { getCurrentUser, logout } from './services/authService';
 import ProtectedRoute from './common/protectedRoute';
 import 'react-toastify/dist/ReactToastify.css';
+import 'react-big-calendar/lib/css/react-big-calendar.css';
+import 'react-datepicker/dist/react-datepicker.css'
 import './App.css';
-// import ContactTypeForm from './components/contactTypeForm';
-// import ContactForm from './components/contactForm';
-// import PlasticTypeForm from './components/plasticTypeForm';
-// import PlasticTypeImageForm from './components/plasticTypeImageForm'
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
