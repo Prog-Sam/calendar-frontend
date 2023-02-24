@@ -18,7 +18,7 @@ export async function login(user) {
 }
 
 export async function changePass(passwordObject){
-  const currentUserId = getCurrentUser().nameid;
+  const currentUserId = getCurrentUser().id;
   try {
     let localPasswordObject = {...passwordObject, ['id']: currentUserId }
 
