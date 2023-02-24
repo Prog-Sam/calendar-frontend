@@ -41,8 +41,8 @@ function App() {
         <ToastContainer />
         <main className='container'>
           <Switch>
-            {/* <ProtectedRoute path='/users/:id' component={UserForm} />
-            <ProtectedRoute path='/userAccounts/:id' component={UserAccountForm} />
+            <ProtectedRoute path='/users/:id' component={UserForm} />
+            {/* <ProtectedRoute path='/userAccounts/:id' component={UserAccountForm} />
             <ProtectedRoute path='/contacts/:id' component={ContactForm} />
             <ProtectedRoute path='/contactTypes/:id' component={ContactTypeForm} />
             <ProtectedRoute path='/products/:id' component={PlasticTypeForm} />

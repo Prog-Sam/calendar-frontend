@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import {getCurrentUser} from '../services/authService';
 
 const Settings = () => {
   return (
@@ -10,16 +11,13 @@ const Settings = () => {
           <Link to='/products'>PRODUCTS</Link>
         </li>
         <li className='list-group-item'>
-          <Link to='/contacts'>CONTACTS</Link>
+          <Link to='/eventTypes'>EVENT TYPES</Link>
         </li>
         <li className='list-group-item'>
-          <Link to='/contactTypes'>CONTACT TYPES</Link>
+          <Link to='/colors'>COLORS</Link>
         </li>
         <li className='list-group-item'>
-          <Link to='/users'>USERS</Link>
-        </li>
-        <li className='list-group-item'>
-          <Link to='/userAccounts'>USER ACCOUNTS</Link>
+          <Link to={`/users/${getCurrentUser().id}`}>ACCOUNT</Link>
         </li>
       </ul>
     </div>

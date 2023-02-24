@@ -44,8 +44,8 @@ const Register = (props) => {
         ? await saveUser(mapToViewModel(await removeVerification(user)))
         : await updateUser(mapToViewModel(user));
       toast(
-        `Successfully Registered${
-          isNew ? 'added.' : 'updated.'
+        `Successfully ${
+          isNew ? 'registered.' : 'updated.'
         }`
       );
       props.history.push('/login');
