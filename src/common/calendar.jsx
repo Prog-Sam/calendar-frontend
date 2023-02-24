@@ -18,6 +18,10 @@ const localizer = dateFnsLocalizer({
     locales,
   })
 
+ const handleEventSelect = (event) => {
+    console.log('Selected event:', event);
+  };
+
 const MyCalendar = ({
   name,
   events,
@@ -30,6 +34,8 @@ const MyCalendar = ({
       events={events}
       startAccessor="startDate"
       endAccessor="endDate"
+      onSelectEvent={handleEventSelect}
+      selectable={true}
       style={{ height: 500 }}
     />
     </Fragment>
