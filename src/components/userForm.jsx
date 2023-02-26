@@ -72,9 +72,6 @@ const UserForm = (props) => {
             return;
         }
 
-        console.log(removeVerification(mapToViewModel(user)));
-        console.log(await removeVerification(mapToViewModel(user)));
-
       const isNew = props.match.params.id === 'New';
       const result = isNew
         ? await saveUser(await removeVerification(mapToViewModel(user)))
@@ -84,7 +81,7 @@ const UserForm = (props) => {
           isNew ? 'added.' : 'updated.'
         }`
       );
-      props.history.push('/users');
+      props.history.push('/');
     } catch (e) {
       console.error(e);
       toast(e);

@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { getCurrentUser } from '../services/authService';
 
 const Navigation = ({ currentUser, onLogout }) => {
   return (
@@ -12,15 +13,15 @@ const Navigation = ({ currentUser, onLogout }) => {
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
         <Navbar.Collapse id='basic-navbar-nav'>
           <Nav className='me-auto'>
+            {currentUser && (
+              <Fragment>
             <Link to='/events/new' className='nav-link'>
               ADD EVENT
             </Link>
-            {currentUser && (
-              <Fragment>
             <Link to='/settings' className='nav-link'>
               SETTINGS
             </Link>
-                <Link to='/updatePassword' className='nav-link'>
+                <Link to={`/users/${getCurrentUser().id}`} className='nav-link'>
                   {currentUser.name.toUpperCase()}
                 </Link>
                 <Link to='/#' className='nav-link' onClick={onLogout}>

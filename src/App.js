@@ -18,6 +18,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import 'react-datepicker/dist/react-datepicker.css'
 import './App.css';
+import EventType from './components/eventType';
+import EventTypeForm from './components/eventTypeForm';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -42,6 +44,7 @@ function App() {
         <main className='container'>
           <Switch>
             <ProtectedRoute path='/users/:id' component={UserForm} />
+            <ProtectedRoute path='/eventTypes/:id' component={EventTypeForm} />
             {/* <ProtectedRoute path='/userAccounts/:id' component={UserAccountForm} />
             <ProtectedRoute path='/contacts/:id' component={ContactForm} />
             <ProtectedRoute path='/contactTypes/:id' component={ContactTypeForm} />
@@ -49,6 +52,7 @@ function App() {
             <ProtectedRoute path='/products-image/:id' component={PlasticTypeImageForm} /> */}
             <Route path='/Register/:id' render={(props) => <Register {...props} />} />
             {/*Routes for Non Form */}
+            <ProtectedRoute path='/eventTypes' component={EventType} />
             <Route path='/login' render={(props) => <LoginForm {...props} />} />
             <Route path='/updatePassword' render={(props) => <ChangePasswordForm {...props} />} />
             {/* <Route path='/users' render={(props) => <User {...props} />} /> */}

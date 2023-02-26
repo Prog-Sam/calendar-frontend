@@ -66,8 +66,8 @@ const useForm = (
     
     const localErrors = {};
     for (let item of error.details) localErrors[item.path[0]] = item.message;
-    // console.log(localErrors);
-    // console.log(state);
+    console.log(localErrors);
+    console.log(state);
 
     return localErrors;
   };

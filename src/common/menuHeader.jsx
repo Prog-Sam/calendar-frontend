@@ -8,7 +8,7 @@ const MenuHeader = ({ path, header, buttonLabel, searchQuery, onSearch }) => {
     <Fragment>
       <h1 className='d-flex align-items-left'>{header}</h1>
       <div className='d-flex align-items-left'>
-        {(getCurrentUser().role == 'Admin') && <Link
+        {(getCurrentUser()) && <Link
           to={`/${path}/New`}
           className='btn btn-primary'
           style={{ marginBottom: 20 }}

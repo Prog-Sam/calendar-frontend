@@ -1,7 +1,7 @@
 import http from './httpService';
 
-export async function getEventTypes() {
-  const eventTypes = await http.get(`/eventTypes`);
+export async function getEventTypes(query='') {
+  const eventTypes = await http.get(`/eventTypes`+ query);
   // console.log(result);
   return eventTypes;
 }
