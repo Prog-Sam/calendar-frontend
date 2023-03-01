@@ -5,6 +5,7 @@ import parse from 'date-fns/parse';
 import startOfWeek from 'date-fns/startOfWeek';
 import getDay from 'date-fns/getDay';
 import enUS from 'date-fns/locale/en-US'
+import { eventStyleGetter } from '../utils/eventItemMethods';
 
 const locales = {
     'en-US': enUS
@@ -36,6 +37,7 @@ const MyCalendar = ({
       endAccessor="endDate"
       onSelectEvent={handleEventSelect}
       selectable={true}
+      eventPropGetter={eventStyleGetter}
       style={{ height: 500 }}
     />
     </Fragment>

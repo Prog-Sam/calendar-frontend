@@ -20,3 +20,37 @@ export async function updateEventItemStatus(id, status){
     await updateEventItem(eventItem);
     return eventItem;
 }
+
+export async function reactifyEvent({id, name, startDate, endDate, EventType}) {
+   return {
+        id,
+        title: name,
+        startDate,
+        endDate,
+        color: EventType.EventColor.value
+    }
+}
+
+export async function reactifyEvents(events){
+    let localEvents = [];
+
+    for(let e of events){
+        localEvents.push(await reactifyEvent(e))
+    }
+
+    return localEvents;
+}
+
+export const eventStyleGetter = (event, start, end, isSelected) => {
+    const style = {
+      backgroundColor: event.color,
+      borderRadius: '0px',
+      opacity: 0.8,
+      color: 'white',
+      border: '0px',
+      display: 'block',
+    }
+    return {
+      style: style,
+    }
+  }
