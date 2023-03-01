@@ -15,7 +15,7 @@ const Navigation = ({ currentUser, onLogout }) => {
           <Nav className='me-auto'>
             {currentUser && (
               <Fragment>
-            <Link to='/events/new' className='nav-link'>
+            <Link to='/events/New' className='nav-link'>
               ADD EVENT
             </Link>
             <Link to='/settings' className='nav-link'>

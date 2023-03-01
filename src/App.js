@@ -2,8 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 
+import EventType from './components/eventType';
+import EventItem from './components/eventItem';
 import Home from './components/home';
 
+import EventTypeForm from './components/eventTypeForm';
 import UserForm from './components/userForm';
 import NotFound from './components/notFound';
 import ChangePasswordForm from './components/changePasswordForm';
@@ -18,8 +21,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import 'react-datepicker/dist/react-datepicker.css'
 import './App.css';
-import EventType from './components/eventType';
-import EventTypeForm from './components/eventTypeForm';
+import EventItemForm from './components/eventItemForm';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -45,6 +47,8 @@ function App() {
           <Switch>
             <ProtectedRoute path='/users/:id' component={UserForm} />
             <ProtectedRoute path='/eventTypes/:id' component={EventTypeForm} />
+            <ProtectedRoute path='/events/:id' component={EventItemForm
+            } />
             {/* <ProtectedRoute path='/userAccounts/:id' component={UserAccountForm} />
             <ProtectedRoute path='/contacts/:id' component={ContactForm} />
             <ProtectedRoute path='/contactTypes/:id' component={ContactTypeForm} />
@@ -52,6 +56,7 @@ function App() {
             <ProtectedRoute path='/products-image/:id' component={PlasticTypeImageForm} /> */}
             <Route path='/Register/:id' render={(props) => <Register {...props} />} />
             {/*Routes for Non Form */}
+            <Route path='/events' render={(props) => <EventItem {...props} />} />
             <ProtectedRoute path='/eventTypes' component={EventType} />
             <Route path='/login' render={(props) => <LoginForm {...props} />} />
             <Route path='/updatePassword' render={(props) => <ChangePasswordForm {...props} />} />

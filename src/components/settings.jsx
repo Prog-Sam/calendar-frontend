@@ -8,14 +8,14 @@ const Settings = () => {
       <h1>SETTINGS</h1>
       <ul className='list-group'>
         <li className='list-group-item'>
-          <Link to='/products'>PRODUCTS</Link>
+          <Link to='/events'>EVENTS</Link>
         </li>
         <li className='list-group-item'>
           <Link to='/eventTypes'>EVENT TYPES</Link>
         </li>
-        <li className='list-group-item'>
+        {/* <li className='list-group-item'>
           <Link to='/colors'>COLORS</Link>
-        </li>
+        </li> */}
         <li className='list-group-item'>
           <Link to={`/users/${getCurrentUser().id}`}>ACCOUNT</Link>
         </li>

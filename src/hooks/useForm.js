@@ -7,6 +7,7 @@ import ColorDaySelector from '../common/colorDaySelector';
 import { handleColor } from '../utils/ColorIndex';
 import FilePicker from '../common/filePicker';
 import { toast } from 'react-toastify';
+import DatePicker from '../common/datePicker';
 
 const useForm = (
   schema,
@@ -66,7 +67,7 @@ const useForm = (
     
     const localErrors = {};
     for (let item of error.details) localErrors[item.path[0]] = item.message;
-    console.log(localErrors);
+    // console.log(localErrors);
     console.log(state);
 
     return localErrors;
@@ -98,6 +99,17 @@ const useForm = (
     const errorMessage = validateProperty(e.target);
     if (errorMessage) localErrors[e.target.name] = errorMessage;
     else delete localErrors[e.target.name];
+
+    setErrors(localErrors);
+  };
+
+  const handleDateChange = (e) => {
+    setState({ ...state, [e.name]: e.value });
+
+    const localErrors = { ...errors };
+    const errorMessage = validateProperty(e.name);
+    if (errorMessage) localErrors[e.name] = errorMessage;
+    else delete localErrors[e.name];
 
     setErrors(localErrors);
   };
@@ -211,6 +223,18 @@ const useForm = (
     );
   };
 
+  const renderDatePicker = (name, label, readOnly = false) => {
+    return (
+      <DatePicker
+        name={name}
+        label={label}
+        onChange={handleDateChange}
+        value={state[name] || ''}
+        error={errors[name]}
+      />
+    );
+  };
+
   return [
     state,
     setState,
@@ -223,6 +247,7 @@ const useForm = (
     getSelectedOption,
     renderColorDaySelector,
     renderFilePicker,
+    renderDatePicker
   ];
 };
 
